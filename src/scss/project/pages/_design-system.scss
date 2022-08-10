@@ -1,0 +1,30 @@
+/* ==========================================================================
+   Pages: Design Dystem
+   ========================================================================== */
+
+.ds {
+  padding: 48px 0;
+  &__head {
+    padding: 0 32px;
+    margin-bottom: 48px;
+  }
+  &__title {
+    color: color(primary, 1);
+    margin-bottom: 8px;
+  }
+  &__desc {
+    color: color(secondary, 1);
+    margin-bottom: 0;
+  }
+  &__item {
+    margin-bottom: 64px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &__title {
+      color: color(primary, 2);
+      margin-bottom: 24px;
+      padding: 0 32px;
+    }
+  }
+}

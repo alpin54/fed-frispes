@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Mixin Owl dot
+   ========================================================================== */
+
+@mixin owl-dot($color: 'primary', $hover: 'primary') {
+  .owl-dot {
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: 16px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 10px;
+      background-color: color(white);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      @include x-small {
+        width: 6px;
+        height: 6px;
+      }
+    }
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      border: 2px solid color($color);
+      border-radius: 50%;
+      transform: scale(0);
+      transition: all 0.3s ease;
+      @include x-small {
+        width: 16px;
+        height: 16px;
+      }
+    }
+    &.active {
+      @if $color == 'primary' {
+        &::before {
+          background-color: color('primary');
+        }
+      } @else {
+        &::before {
+          background-color: color($hover);
+        }
+      }
+      &::after {
+        transform: scale(1);
+      }
+    }
+    &s {
+      position: absolute;
+      left: 48px;
+      top: 50%;
+      z-index: zi(owl-dots);
+      transform: translateY(-50%);
+      @include mq(1234px) {
+        display: none;
+      }
+    }
+  }
+}

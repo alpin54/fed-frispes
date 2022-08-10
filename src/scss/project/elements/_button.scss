@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Elements Button
+   ========================================================================== */
+
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: middle;
+  min-width: 232px;
+  padding: 14px 24px;
+  outline: 0;
+  border: solid 2px transparent;
+  @include font-size(18);
+  font-weight: fw(700);
+  @include radius(1);
+  text-align: center;
+  color: color(black);
+  background-color: transparent;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  @include remove-tap-highlight;
+  @include x-small {
+    min-width: 160px;
+    padding: 12px 16px;
+    @include font-size(16);
+  }
+  i {
+    display: inline-block;
+    vertical-align: middle;
+    @include font-size(24);
+    line-height: 1;
+    margin-left: 8px;
+    color: inherit;
+    transition: transform 0.3s ease;
+  }
+  &:hover {
+    i {
+      transform: translateX(4px);
+    }
+  }
+  &--primary {
+    background-color: color(primary, 1);
+    color: color(white);
+    &:hover {
+      background-color: transparent;
+      border-color: color(primary, 1);
+      color: color(primary, 1);
+    }
+  }
+  &--secondary {
+    background-color: color(secondary, 1);
+    color: color(white);
+    &:hover {
+      background-color: transparent;
+      border-color: color(secondary, 1);
+      color: color(secondary, 1);
+    }
+  }
+}

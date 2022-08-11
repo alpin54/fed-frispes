@@ -4,15 +4,7 @@
 --------------------------------------------------------------------------------- */
 
 // --- components
-import {
-  Method,
-  Card,
-  WidgetArticle,
-  Footer,
-  Features,
-  Services,
-  Header
-} from 'components';
+import { Header, Footer } from 'components';
 
 // --- WindowResize
 const WindowResize = (() => {
@@ -39,15 +31,8 @@ const WindowResize = (() => {
     } else {
       _timeout = false;
       // Run Function on Resize end
-      Method.checkHeight();
-      Card.checkHeight();
-      Footer.footerSticky();
-      WidgetArticle.destroyCarousel();
-      Features.checkHeight();
-      Features.checkHeightFeatures();
-      Features.setHeightFeatures();
-      Services.destroyCarousel();
       Header.destroyMobileMenu();
+      Footer.footerSticky();
       $('body').removeClass('hold-transition');
     }
   };

@@ -1,6 +1,6 @@
 {
-  "short_name": "Klinik Metro",
-  "name": "Klinik Metro",
+  "short_name": "Frispes",
+  "name": "Frispes",
   "start_url": "../../../.",
   "icons": [
     {
@@ -40,7 +40,7 @@
       "density": "4.0"
     }
   ],
-  "background_color": "#ff0021",
-  "theme_color": "#ff0021",
+  "background_color": "#10375c",
+  "theme_color": "#10375c",
   "display": "standalone"
 }

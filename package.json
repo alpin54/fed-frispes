@@ -1,7 +1,7 @@
 {
-  "name": "web-template-jquery",
+  "name": "frispes",
   "version": "1.0.0",
-  "description": "Website Project Template using jQuery",
+  "description": "Website Project Frispes",
   "main": "gulpfile.babel.js",
   "scripts": {
     "start": "gulp",
@@ -16,19 +16,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bilikmedia/jquery-template-web.git"
+    "url": "git+https://github.com/alpin54/fed-frispes.git"
   },
   "keywords": [
     "website",
     "using",
     "jquery"
   ],
-  "author": "bilik dev",
+  "author": "Alpin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bilikmedia/jquery-template-web/issues"
+    "url": "https://github.com/alpin54/fed-frispes/issues"
   },
-  "homepage": "https://github.com/bilikmedia/jquery-template-web#readme",
+  "homepage": "https://github.com/alpin54/fed-frispes#readme",
   "dependencies": {
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.4",

@@ -1,4 +1,4 @@
-> rzfsoftware/fed-klinik-metro
+> frispes
 
 # Front-end Development Base Template
 
@@ -8,7 +8,7 @@ Run the project
 
 - Enter terminal, just run code
   ```bash
-  $ git remote add origin https://github.com/ErwanHermawan/fed-template.git
+  $ git remote add origin https://github.com/alpin54/fed-frispes.git
   $ cd fed-template
   $ npm install (wait until it`s finised)
   $ npm run start

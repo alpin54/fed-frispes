@@ -7,7 +7,8 @@ import {
   WindowResize,
   Header,
   Footer,
-  FormElement
+  FormElement,
+  MainBanner
 } from 'components';
 
 // --- App
@@ -41,6 +42,7 @@ const App = (() => {
       Header.init();
       Footer.init();
       FormElement.init();
+      MainBanner.init();
     })(jQuery);
   };
 

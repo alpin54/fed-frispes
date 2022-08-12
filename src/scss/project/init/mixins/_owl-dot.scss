@@ -2,69 +2,29 @@
    Mixin Owl dot
    ========================================================================== */
 
-@mixin owl-dot($color: 'primary', $hover: 'primary') {
+@mixin owl-dot {
   .owl-dot {
     position: relative;
-    display: block;
-    width: 24px;
-    height: 24px;
-    margin-bottom: 16px;
+    display: inline-block;
+    width: 16px;
+    height: 4px;
+    margin-right: 8px;
+    background-color: rgba(color(white), 0.5);
+    transition: all 0.35s ease;
     &:last-child {
-      margin-bottom: 0;
-    }
-    &::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 10px;
-      height: 10px;
-      background-color: color(white);
-      border-radius: 50%;
-      transition: all 0.3s ease;
-      @include x-small {
-        width: 6px;
-        height: 6px;
-      }
-    }
-    &::after {
-      content: '';
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      border: 2px solid color($color);
-      border-radius: 50%;
-      transform: scale(0);
-      transition: all 0.3s ease;
-      @include x-small {
-        width: 16px;
-        height: 16px;
-      }
+      margin-right: 0;
     }
     &.active {
-      @if $color == 'primary' {
-        &::before {
-          background-color: color('primary');
-        }
-      } @else {
-        &::before {
-          background-color: color($hover);
-        }
-      }
-      &::after {
-        transform: scale(1);
-      }
+      background-color: color(secondary, 1);
+      width: 40px;
     }
     &s {
       position: absolute;
-      left: 48px;
-      top: 50%;
+      left: 50%;
+      bottom: 56px;
+      transform: translateX(-50%);
       z-index: zi(owl-dots);
-      transform: translateY(-50%);
-      @include mq(1234px) {
-        display: none;
-      }
+      font-size: 0;
     }
   }
 }

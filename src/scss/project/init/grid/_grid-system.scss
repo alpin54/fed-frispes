@@ -16,15 +16,22 @@
     padding-left: 24px;
     padding-right: 24px;
   }
+  @include x-small {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
 }
 
 .main-site {
-  padding-top: 80px;
+  padding-top: 136px;
   transition: all 0.3s ease;
   @include medium {
     padding-top: 72px;
   }
   @include x-small {
     padding-top: 64px;
+  }
+  .header-on-scroll & {
+    padding-top: 88px;
   }
 }

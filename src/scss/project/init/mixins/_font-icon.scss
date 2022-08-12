@@ -5,7 +5,7 @@
 @mixin font-icon-prop {
   display: inline-block;
   vertical-align: middle;
-  font-family: $font-icon;
+  font-family: ff(icon);
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -18,16 +18,16 @@
 }
 
 // font-icon
-@mixin font-icon($content: "\e900", $element: 'before') {
+@mixin font-icon($content: '\e900', $element: 'before') {
   @if $element == 'after' {
     &::after {
       @include font-icon-prop;
-      content: "#{$content}";
+      content: '#{$content}';
     }
   } @else {
     &::before {
       @include font-icon-prop;
-      content: "#{$content}";
+      content: '#{$content}';
     }
   }
 }

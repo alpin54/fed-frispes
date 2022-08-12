@@ -1,0 +1,49 @@
+//-------------------------------------------------------------------------------
+  @name: Main Banner
+  -------------------------------------------------------------------------------//
+
+// main-banner
+.main-banner
+  .container
+    .main-banner__wrapper
+      .main-banner__txt
+        p.main-banner__headline
+          | !{data.headline}
+        h2.main-banner__title
+          | !{data.title}
+      .main-banner__txt
+        p.main-banner__desc
+          | !{data.desc}
+    .main-banner__space
+      .main-banner__box
+        h4.main-banner__box__title
+          | !{data.box.title}
+        .main-banner__form
+          each val in data.box.form
+            .fe__row
+              .fe__dropdown.js-fe-dropdown
+                ='\n'
+                button.fe__dropdown__dropbtn(type='button')
+                ='\n'
+                input.fe__dropdown__input(type='text' name=val.name id=val.id value=val.value)/
+                ='\n'
+                label.fe__dropdown__label
+                  | !{val.label}
+                ='\n'
+                p.fe__dropdown__text
+                  | !{val.value}
+                ul.fe__dropdown__menu
+                  each valDrop in val.dropdown
+                    li.fe__dropdown__item(data-value=valDrop.value)
+                      | !{valDrop.value}
+          .fe__row
+            ='\n'
+            button.btn.btn--secondary.btn--block(type='button')
+              | FIND MY SPACE
+      .main-banner__list
+        .main-banner__slidder.js-main-banner
+          each valImg in data.list
+            .main-banner__item
+              ='\n'
+              img.main-banner__img(src='assets/img/dummy/'+valImg.src alt=valImg.alt)/
+

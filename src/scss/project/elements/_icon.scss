@@ -2,9 +2,10 @@
    Elements Icon
    ========================================================================== */
 
-[class^="fi-"], [class*=" fi-"] {
+[class^='fi-'],
+[class*=' fi-'] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'frispes-icon' !important;
+  font-family: ff(icon);
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -18,23 +19,23 @@
 }
 
 .fi-youtube:before {
-  content: "\e900";
+  content: '\e900';
 }
 .fi-Instagram:before {
-  content: "\e905";
+  content: '\e905';
 }
 .fi-facebook:before {
-  content: "\e907";
+  content: '\e907';
 }
 .fi-chevron-up:before {
-  content: "\e909";
+  content: '\e909';
 }
 .fi-chevron-right:before {
-  content: "\e90a";
+  content: '\e90a';
 }
 .fi-chevron-left:before {
-  content: "\e90b";
+  content: '\e90b';
 }
 .fi-chevron-down:before {
-  content: "\e90c";
+  content: '\e90c';
 }

@@ -5,47 +5,66 @@
 -
   header = {
     logo: {
-      src: 'metro.png',
+      src: 'frispes.svg',
       to: 'index.html',
-      alt: 'Klinik Metro'
+      alt: 'frispes'
     },
     menu: [
       {
-        to: 'layanan.html',
-        text: 'Layanan',
-        classActive: 'layanan'
+        to: 'index.html',
+        text: 'Home',
+        classActive: 'home'
       },
       {
-        to: 'mitra.html',
-        text: 'Mitra',
-        classActive: 'mitra'
+        to: 'workspace.html',
+        text: 'Workspace',
+        classActive: 'workspace'
       },
       {
-        to: 'artikel.html',
-        text: 'Artikel',
-        classActive: 'artikel'
+        to: 'service.html',
+        text: 'Service',
+        classActive: 'service'
       },
       {
-        to: 'tentang-kami.html',
-        text: 'Tentang Kami',
-        classActive: 'tentang-kami'
+        to: 'events.html',
+        text: 'Events',
+        classActive: 'events'
+      },
+      {
+        to: 'reviews.html',
+        text: 'Reviews',
+        classActive: 'reviews'
+      },
+      {
+        to: 'contact-us.html',
+        text: 'Contact Us',
+        classActive: 'contact-us'
       }
     ],
-    button: {
-      to: 'daftar.html',
-      text: 'Daftar Online'
-    }
+    button: [
+      {
+        class: 'text',
+        to: 'login.html',
+        text: 'Log In'
+      },
+      {
+        class: 'secondary',
+        to: 'signup.html',
+        text: 'Sign Up'
+      }
+    ]
   }
 
 //header
 .header
   .container
-    .header__content
-      ='\n'
-      a.header__logo(href=header.logo.to)
+    .header__inner
+      .header__logo
         ='\n'
-        img.header__logo__img(src='assets/img/logo/'+header.logo.src, alt=header.logo.alt)/
-        ='\n'
+        a.header__logo__link(href=header.logo.to)
+          ='\n'
+          img.header__logo__img(src='assets/img/logo/'+header.logo.src, alt=header.logo.alt)/
+          ='\n'
       .header__menu
         ul.header__menu__list
           each val in header.menu
@@ -54,14 +73,16 @@
               a.header__menu__link(href=val.to) !{val.text}
               ='\n'
         .header__menu__btn
-          ='\n'
-          a.btn.btn--outline(href=header.button.to) !{header.button.text}
-          ='\n'
-      ='\n'
-      button.burger-menu.js-mobile-menu(type='button')
-        each val in [1, 2, 3]
-          ='\n'
-          span.burger-menu__bar
+          each val in header.button
+            ='\n'
+            a(href=val.to class='btn btn--'+val.class) !{val.text}
+            ='\n'
+      .header__burger-menu
         ='\n'
+        button.burger-menu.js-mobile-menu(type='button')
+          each val in [1, 2, 3]
+            ='\n'
+            span.burger-menu__bar
+          ='\n'
 ='\n'
 //end-header

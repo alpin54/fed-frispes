@@ -3,37 +3,55 @@
   ========================================================================== */
 
 .burger-menu {
-  position: relative;
-  border: 0;
-  outline: 0;
-  z-index: zi(burger-menu);
-  width: 40px;
-  height: 40px;
-  font-size: 0;
-  line-height: 1;
-  padding: 8px;
-  text-align: right;
-  cursor: pointer;
-  background-color: transparent;
-  @include remove-tap-highlight;
-  &__bar {
-    width: 24px;
-    height: 2px;
-    display: inline-block;
-    margin-bottom: 6px;
-    background-color: color(secondary, 1);
-    border-radius: 2px;
-    overflow: hidden;
-    transition: all 0.4s ease;
-    transform-origin: center center;
-    &:nth-child(2) {
-      width: 16px;
-      margin-right: 4px;
-      transform: scaleX(1);
-    }
-    &:nth-child(3) {
-      margin-bottom: 0;
-      width: 24px;
+  @include medium {
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    outline: 0;
+    border: 0;
+    border-radius: 0;
+    @include clearfix;
+    &__bar {
+      float: right;
+      width: 28px;
+      height: 2px;
+      display: block;
+      background-color: color(primary, 1);
+      margin-bottom: 8px;
+      border-radius: 1px;
+      transform-origin: center center;
+      transition: transform 0.5s ease, width 0.5s ease;
+      transition-delay: 0s;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:nth-child(1) {
+        width: 18px;
+      }
+      &:nth-child(2) {
+        transform-origin: left center;
+        transition-delay: 0.25s;
+      }
+      &:nth-child(3) {
+        width: 22px;
+      }
+      .show-nav & {
+        &:nth-child(1) {
+          width: 24px;
+          transform: rotate(135deg) translate(35%, -275%);
+          transition-delay: 0.25s;
+        }
+        &:nth-child(2) {
+          transform: scaleX(0);
+          transition-delay: 0s;
+          transform-origin: right center;
+        }
+        &:nth-child(3) {
+          width: 24px;
+          transform: rotate(-135deg) translate(35%, 275%);
+          transition-delay: 0.25s;
+        }
+      }
     }
   }
 }

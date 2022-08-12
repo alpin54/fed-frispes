@@ -1,0 +1,83 @@
+-
+  data = {
+    headline: 'Introducing',
+    title: '<span>Revolutionary</span> co-working space to realize your innovation',
+    desc: 'In frispes, we spearhead new initiatives and provide mentorship to a new startup, and help grow their opportunities in key local, regional and global markets',
+    list: [
+      {
+        src: 'main-banner.jpg',
+        alt: 'main banner'
+      },
+      {
+        src: 'article-1.jpg',
+        alt: 'main banner'
+      }
+    ],
+    box:{
+      title: 'Find your space now',
+      form: [
+        {
+          label: 'Location',
+          name: 'location',
+          id: 'location',
+          value: 'Malang, Indonesia',
+          dropdown: [
+            {
+              value: 'Malang, Indonesia',
+            },
+            {
+              value: 'Bandung, Indonesia',
+            },
+            {
+              value: 'Jakarta, Indonesia',
+            },
+            {
+              value: 'Surabaya, Indonesia',
+            }
+          ]
+        },
+        {
+          label: 'Type',
+          name: 'type',
+          id: 'type',
+          value: 'Private Office',
+          dropdown: [
+            {
+              value: 'Private Office',
+            },
+            {
+              value: 'Cubical Type Office',
+            },
+            {
+              value: 'Open Plan Office',
+            },
+            {
+              value: 'Landscape Office',
+            }
+          ]
+        },
+        {
+          label: 'Date',
+          name: 'date',
+          id: 'date',
+          value: '9 Aug 2022',
+          dropdown: [
+            {
+              value: '9 Aug 2022',
+            },
+            {
+              value: '10 Sep 2022',
+            },
+            {
+              value: '1 Oct 2022',
+            },
+            {
+              value: '22 Nov 2022',
+            }
+          ]
+        }
+      ]
+    }
+  };
+
+include ../../components/main-banner.pug

@@ -1,0 +1,19 @@
+//-------------------------------------------------------------------------------
+  @name: Our Spaces Item
+  -------------------------------------------------------------------------------//
+
+// our-spaces
+.our-spaces
+  .container
+    .our-space__head
+      h2.our-space__title
+        | !{data.title}
+      p.our-space__desc
+        | !{data.desc}
+    .our-space__body
+      each val in data.list
+        - data = val;
+        include ../components/our-spaces-item.pug
+
+='\n'
+// our-spaces

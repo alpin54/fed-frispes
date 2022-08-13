@@ -93,7 +93,7 @@ Layout: Header
       transform: scaleX(0);
       transform-origin: right center;
       transition: all 0.5s ease;
-      transition-delay: 0.25s;
+      transition-delay: 0.45s;
       .show-nav & {
         transform: none;
         transition-delay: 0.2s;
@@ -122,7 +122,7 @@ Layout: Header
         .show-nav & {
           opacity: 1;
           transform: none;
-          transition-delay: 0.7s;
+          transition-delay: 0.8s;
         }
       }
     }
@@ -184,11 +184,11 @@ Layout: Header
         transition: all 0.45s ease;
         transition-delay: 0s;
         opacity: 0;
-        transform: translateX(24px);
+        transform: translateY(24px);
         .show-nav & {
           opacity: 1;
           transform: none;
-          transition-delay: 0.7s;
+          transition-delay: 1s;
         }
       }
       @include x-small {

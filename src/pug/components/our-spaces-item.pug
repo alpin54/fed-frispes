@@ -1,0 +1,33 @@
+//-------------------------------------------------------------------------------
+  @name: Our Space Item
+  -------------------------------------------------------------------------------//
+
+// our-space-item
+.our-space__item
+  .our-space__box
+    .our-space__back
+      .our-space__back__txt
+        h3.our-space__back__title
+          | !{data.title}
+        p.our-space__back__desc
+          | !{data.desc}
+        .our-space__back__btn
+          ='\n'
+          button.btn.btn--secondary(type='button')
+            | Check avaibility
+            ='\n'
+            i.fi-chevron-right
+          ='\n'
+    .our-space__img
+      ='\n'
+      img.our-space__img__el(src='assets/img/dummy/'+data.img.src alt=data.img.alt)/
+    .our-space__txt
+      h2.our-space__title
+        | !{data.title}
+    ='\n'
+    button.btn.btn--secondary(type='button')
+      ='\n'
+      i.fi-chevron-right
+    ='\n'
+='\n'
+// end-our-space-item

@@ -35,7 +35,6 @@ const MainBanner = (() => {
       if (_selector.hasClass('owl-carousel')) {
         _selector.removeClass('owl-carousel');
       }
-      _selector.addClass('main-banner__slidder--single');
     }
   };
 

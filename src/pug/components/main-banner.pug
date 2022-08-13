@@ -5,13 +5,13 @@
 // main-banner
 .main-banner
   .container
-    .main-banner__wrapper
-      .main-banner__txt
+    .main-banner__txt
+      .main-banner__txt-wrapper
         p.main-banner__headline
           | !{data.headline}
         h2.main-banner__title
           | !{data.title}
-      .main-banner__txt
+      .main-banner__txt-wrapper
         p.main-banner__desc
           | !{data.desc}
     .main-banner__space
@@ -40,10 +40,10 @@
             ='\n'
             button.btn.btn--secondary.btn--block(type='button')
               | FIND MY SPACE
-      .main-banner__list
-        .main-banner__slidder.js-main-banner
-          each valImg in data.list
-            .main-banner__item
-              ='\n'
-              img.main-banner__img(src='assets/img/dummy/'+valImg.src alt=valImg.alt)/
-
+      .main-banner__list.js-main-banner
+        each valImg in data.list
+          .main-banner__item
+            ='\n'
+            img.main-banner__img(src='assets/img/dummy/'+valImg.src alt=valImg.alt)/
+='\n'
+// end-main-banner

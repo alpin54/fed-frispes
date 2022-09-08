@@ -41,6 +41,16 @@
       color: color(secondary, 1);
     }
   }
+  &--white {
+    border-color: color(white);
+    background-color: color(white);
+    color: color(secondary, 1);
+    &:hover {
+      color: color(white);
+      border-color: color(primary, 1);
+      background-color: color(primary, 1);
+    }
+  }
   &--text {
     padding: 0;
     font-weight: fw(400);

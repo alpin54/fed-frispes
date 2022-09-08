@@ -1,3 +1,223 @@
 /* ==========================================================================
-   Layouts Footer
-   ========================================================================== */
+   Layout: Footer
+  ========================================================================== */
+
+.footer {
+  $f: &;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+  z-index: zi(footer);
+  padding: 64px 0;
+  background-color: color(primary, 2);
+  transition: all 0.3s ease;
+  @include large {
+    padding: 56px 0;
+  }
+  @include medium {
+    padding: 48px 0;
+  }
+  @include small {
+    position: relative;
+    padding: 40px 0;
+  }
+  &__wrapper {
+    @include clearfix;
+  }
+  &__about {
+    float: left;
+    max-width: 256px;
+    margin-right: 128px;
+  }
+  &__logo {
+    display: block;
+    margin-bottom: 16px;
+    @include remove-tap-highlight;
+    &__el {
+      display: block;
+      height: 56px;
+    }
+  }
+  &__desc {
+    @include font-size(16);
+    font-weight: fw(400);
+    color: color(white);
+    margin-bottom: 24px;
+  }
+  &__sosmed {
+    float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    &__item {
+      position: relative;
+      display: inline-block;
+      margin-right: 24px;
+      text-align: center;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    &__link {
+      display: block;
+      color: color(white);
+      @include font-size(24);
+      text-decoration: none;
+      @include remove-tap-highlight;
+      i {
+        display: block;
+        transition: all 0.4s ease;
+      }
+    }
+    .instagram {
+      i {
+        &:hover {
+          transform: translateY(-4px);
+          color: color(social-media, instagram);
+        }
+      }
+    }
+    .youtube {
+      i {
+        &:hover {
+          transform: translateY(-4px);
+          color: color(social-media, youtube);
+        }
+      }
+    }
+    .facebook {
+      i {
+        &:hover {
+          transform: translateY(-4px);
+          color: color(social-media, facebook);
+        }
+      }
+    }
+  }
+  &__menu {
+    float: right;
+    @include clearfix;
+    &__item {
+      float: left;
+      margin-right: 64px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &__title {
+    @include font-size(20);
+    font-weight: fw(500);
+    color: rgba(color(white), 0.5);
+    margin-bottom: 24px;
+    position: relative;
+    @include x-small {
+      &::before,
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 14px;
+        width: 12px;
+        height: 2px;
+        z-index: zi(footer-title);
+        background-color: color(white);
+        transition: all 0.4s ease 0.2s;
+      }
+      &::before {
+        right: 12px;
+        border-radius: 0.5px 0 0 0.5px;
+        transform-origin: 100% 100%;
+        transform: rotate(40deg) scaleY(1.1);
+      }
+      &::after {
+        right: 0;
+        border-radius: 0 0.5px 0.5px 0;
+        transform-origin: 0% 100%;
+        transform: rotate(-40deg) scaleY(1.1);
+      }
+    }
+  }
+  &__nav {
+    $n: &;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 200px;
+    @include x-small {
+      display: none;
+      padding-bottom: 24px;
+    }
+    &__item {
+      position: relative;
+      margin-bottom: 8px;
+      @include x-small {
+        opacity: 0;
+        transform: translateX(24px);
+        transition: all 0.4s ease 0s;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__link {
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      color: color(white);
+      @include font-size(16);
+      font-weight: fw(400);
+      padding-bottom: 8px;
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        transform-origin: right center;
+        background-color: color(white);
+        transform: scaleX(0);
+        transition: transform 0.35s ease;
+      }
+      &:hover {
+        &::after {
+          transform: scaleX(1);
+          transform-origin: left center;
+        }
+      }
+    }
+    &--contact {
+      #{$n} {
+        &__item {
+          padding-left: 24px;
+          &::before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: inline-block;
+            font-weight: fw(600);
+            color: color(white);
+          }
+          &:first-child {
+            &::before {
+              content: 'E.';
+            }
+          }
+          &:nth-child(2) {
+            &::before {
+              content: 'A.';
+            }
+          }
+          &:last-child {
+            &::before {
+              content: 'P.';
+            }
+          }
+        }
+      }
+    }
+  }
+}

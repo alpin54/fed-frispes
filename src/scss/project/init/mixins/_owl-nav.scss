@@ -1,0 +1,55 @@
+/* ==========================================================================
+   Mixin Owl nav
+   ========================================================================== */
+
+@mixin owl-nav {
+  .owl-nav {
+    width: 256px;
+    text-align: left;
+    .owl-prev,
+    .owl-next {
+      width: 128px;
+      @include font-size(52);
+      color: color(secondary, 1);
+      transition: all 0.3s ease;
+      &.disabled {
+        width: 88px;
+        color: color(grey, 2);
+        i::after {
+          width: 56px;
+          background-color: color(grey, 2);
+        }
+      }
+      i {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 88px;
+          height: 4px;
+          background-color: color(secondary, 1);
+          border-radius: 32px;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+    .owl-prev {
+      text-align: left;
+      i {
+        &::after {
+          left: 20px;
+        }
+      }
+    }
+    .owl-next {
+      text-align: right;
+      i {
+        &::after {
+          right: 20px;
+        }
+      }
+    }
+  }
+}

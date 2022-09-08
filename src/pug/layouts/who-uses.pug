@@ -1,0 +1,19 @@
+//-------------------------------------------------------------------------------
+  @name: Who Uses
+  -------------------------------------------------------------------------------//
+
+// who-uses
+.who-uses
+  .container
+    .who-uses__head
+      h2.who-uses__title
+        | !{data.title}
+      p.who-uses__desc
+        | !{data.desc}
+    .who-uses__body.js-who-uses
+      each val in data.list
+        - data = val;
+        include ../components/who-uses-item.pug
+
+='\n'
+// end-who-uses

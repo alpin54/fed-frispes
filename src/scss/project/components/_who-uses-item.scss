@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Components Who Uses Item
+   ========================================================================== */
+
+.who-uses {
+  $wu: &;
+  &__box {
+    position: relative;
+    &:hover {
+      #{$wu} {
+        &__img {
+          transform: translateY(-8px);
+        }
+      }
+    }
+  }
+  &__link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: zi(who-uses-link);
+    width: 100%;
+    height: 100%;
+  }
+  &__img {
+    width: 100%;
+    height: 48px;
+    transition: transform 0.35s ease;
+    &__el {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}

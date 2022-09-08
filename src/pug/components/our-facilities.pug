@@ -1,0 +1,30 @@
+//-------------------------------------------------------------------------------
+  @name: Our Facilities
+  -------------------------------------------------------------------------------//
+
+// our-facilities
+.our-facilities
+  .container
+    .our-facilities__head
+      p.txt-el__tagline
+        | !{data.tagline}
+      h2.txt-el__title
+        | !{data.title}
+    .our-facilities__body.js-our-facilities
+      each val in data.list
+        .our-facilities__tabs.js-tabs-facilities
+          .our-facilities__control
+            .our-facilities__select.js-select-facilities
+              p.our-facilities__desc
+                | !{val.tabs[0].name}
+            ul.our-facilities__list
+              each valControl, indexControl in val.tabs
+                li.our-facilities__item(data-target=valControl.name.replace(/\s+/g, '-').toLowerCase(), class=(indexControl === 0 ? 'our-facilities__item--active' : '' ))
+                  | !{valControl.name}
+          each valContent, indexContent in val.tabs
+            .our-facilities__pane(data-pane=valContent.name.replace(/\s+/g, '-').toLowerCase(), class=(indexContent === 0 ? 'our-facilities__pane--active' : '' ))
+              .our-facilities__pane__img
+                ='\n'
+                img.our-facilities__pane__img__el(src='assets/img/dummy/'+valContent.img.src alt=valContent.img.alt)/
+='\n'
+// end-our-facilities

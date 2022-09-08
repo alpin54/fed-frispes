@@ -1,0 +1,21 @@
+//-------------------------------------------------------------------------------
+  @name: Help Center
+  -------------------------------------------------------------------------------//
+
+// help-center
+.help-center
+  .container
+    .help-center__head
+      h2.txt-el__title
+        | !{dataHelpCenter.title}
+    .help-center__body.js-help-center
+      each val in dataHelpCenter.list
+        - data = val;
+        include ../components/help-center-item.pug
+    .help-center__foot
+      a.btn.btn--text(href=dataHelpCenter.btn.to)
+        | !{dataHelpCenter.btn.text}
+        i.fi-chevron-right
+
+='\n'
+// end-help-center

@@ -1,0 +1,21 @@
+//-------------------------------------------------------------------------------
+  @name: Reviews Item
+  -------------------------------------------------------------------------------//
+
+// reviews-item
+.reviews__item
+  .reviews__box
+    p.reviews__desc
+      | !{data.desc}
+    .reviews__avatar
+      .reviews__avatar__img
+        ='\n'
+        img.reviews__avatar__img__el(src='assets/img/dummy/'+data.avatar.img alt=data.avatar.name)/
+      .reviews__avatar__txt
+        h4.reviews__name
+          | !{data.avatar.name}
+        p.reviews__position
+          | !{data.avatar.position}
+  ='\n'
+='\n'
+// end-reviews-item

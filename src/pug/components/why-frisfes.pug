@@ -1,0 +1,29 @@
+//-------------------------------------------------------------------------------
+  @name: Why Frisfes
+  -------------------------------------------------------------------------------//
+
+// why-frisfes
+.why-frisfes
+  .container
+    .why-frisfes__wrapper
+      .why-frisfes__list
+        each val in data.list
+          .why-frisfes__item
+            .why-frisfes__item__icon
+              ='\n'
+              img.why-frisfes__item__icon__el(src='assets/img/icon/'+val.icon alt=val.title)/
+            .why-frisfes__item__txt
+              h3.why-frisfes__item__title
+                | !{val.title}
+              p.why-frisfes__item__desc
+                | !{val.desc}
+      .why-frisfes__txt.txt-el--white
+        p.txt-el__tagline
+          | !{data.tagline}
+        h2.txt-el__title
+          | !{data.title}
+        p.txt-el__desc
+          | !{data.desc}
+
+='\n'
+// end-why-frisfes

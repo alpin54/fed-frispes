@@ -4,7 +4,7 @@
 --------------------------------------------------------------------------------- */
 
 // --- components
-import { Header, Footer } from 'components';
+import { Header, Footer, Reviews, HelpCenter } from 'components';
 
 // --- WindowResize
 const WindowResize = (() => {
@@ -33,6 +33,8 @@ const WindowResize = (() => {
       // Run Function on Resize end
       Header.destroyMobileMenu();
       Footer.footerSticky();
+      Reviews.checkHeight();
+      HelpCenter.checkHeight();
       $('body').removeClass('hold-transition');
     }
   };

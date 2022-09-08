@@ -1,33 +1,32 @@
 //-------------------------------------------------------------------------------
-  @name: Our Space Item
+  @name: Our Spaces Item
   -------------------------------------------------------------------------------//
 
-// our-space-item
-.our-space__item
-  .our-space__box
-    .our-space__back
-      .our-space__back__txt
-        h3.our-space__back__title
+// our-spaces-item
+.our-spaces__item
+  .our-spaces__box
+    .our-spaces__board
+      .our-spaces__board__txt
+        h3.our-spaces__board__title
           | !{data.title}
-        p.our-space__back__desc
+        p.our-spaces__board__desc
           | !{data.desc}
-        .our-space__back__btn
+        ='\n'
+        a.our-spaces__board__btn(href=data.to)
+          | Check avaibility
           ='\n'
-          button.btn.btn--secondary(type='button')
-            | Check avaibility
-            ='\n'
-            i.fi-chevron-right
-          ='\n'
-    .our-space__img
+          i.fi-chevron-right
+        ='\n'
+    .our-spaces__img
       ='\n'
-      img.our-space__img__el(src='assets/img/dummy/'+data.img.src alt=data.img.alt)/
-    .our-space__txt
-      h2.our-space__title
+      img.our-spaces__img__el(src='assets/img/dummy/'+data.img.src alt=data.img.alt)/
+    .our-spaces__txt
+      h4.our-spaces__txt__title
         | !{data.title}
     ='\n'
-    button.btn.btn--secondary(type='button')
+    button.our-spaces__btn(type='button')
       ='\n'
       i.fi-chevron-right
     ='\n'
 ='\n'
-// end-our-space-item
+// end-our-spaces-item

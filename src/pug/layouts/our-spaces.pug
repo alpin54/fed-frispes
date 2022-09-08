@@ -1,16 +1,16 @@
 //-------------------------------------------------------------------------------
-  @name: Our Spaces Item
+  @name: Our Spaces
   -------------------------------------------------------------------------------//
 
 // our-spaces
 .our-spaces
   .container
-    .our-space__head
-      h2.our-space__title
+    .our-spaces__head
+      h2.our-spaces__title
         | !{data.title}
-      p.our-space__desc
+      p.our-spaces__desc
         | !{data.desc}
-    .our-space__body
+    .our-spaces__body.js-our-spaces
       each val in data.list
         - data = val;
         include ../components/our-spaces-item.pug

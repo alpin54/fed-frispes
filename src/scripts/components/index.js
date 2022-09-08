@@ -9,5 +9,22 @@ import Header from './Header';
 import Footer from './Footer';
 import FormElement from './FormElement';
 import MainBanner from './MainBanner';
+import OurSpaces from './OurSpaces';
+import OurFacilities from './OurFacilities';
+import Gallery from './Gallery';
+import Reviews from './Reviews';
+import HelpCenter from './HelpCenter';
 
-export { WindowScroll, Header, WindowResize, Footer, FormElement, MainBanner };
+export {
+  WindowScroll,
+  Header,
+  WindowResize,
+  Footer,
+  FormElement,
+  MainBanner,
+  OurSpaces,
+  OurFacilities,
+  Gallery,
+  Reviews,
+  HelpCenter
+};

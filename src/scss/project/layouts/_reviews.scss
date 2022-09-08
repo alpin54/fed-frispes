@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Layouts Reviews
+   ========================================================================== */
+
+.reviews {
+  $r: &;
+  width: 100%;
+  min-height: 712px;
+  overflow: hidden;
+  position: relative;
+  &__container {
+    position: absolute;
+    left: calc(50% - 560px);
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+    height: 100%;
+  }
+  &__content {
+    position: relative;
+    padding: 56px 0;
+  }
+  &__head {
+    max-width: 400px;
+    margin-bottom: 56px;
+    .txt-el__title {
+      margin-bottom: 0;
+    }
+  }
+  &__body {
+    font-size: 0;
+  }
+  #{$r} {
+    &__item {
+      display: inline-block;
+      vertical-align: top;
+      width: 448px;
+      padding-right: 32px;
+    }
+  }
+  .owl-carousel {
+    .owl-stage-outer {
+      overflow: initial;
+    }
+    @include owl-nav;
+    .owl-nav {
+      position: absolute;
+      top: -96px;
+      right: 120px;
+      z-index: zi(owl-nav);
+    }
+    @include owl-dot('true');
+    .owl-dots {
+      position: absolute;
+      right: 50%;
+      bottom: -56px;
+      transform: translateX(-50%);
+      z-index: zi(owl-dots);
+      font-size: 0;
+    }
+  }
+}

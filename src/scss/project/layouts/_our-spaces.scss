@@ -1,0 +1,79 @@
+/* ==========================================================================
+   Components Our Spaces
+   ========================================================================== */
+
+.our-spaces {
+  $os: &;
+  padding: 112px 0;
+  @include large {
+    padding: 96px 0;
+  }
+  @include medium {
+    padding: 80px 0;
+  }
+  @include small {
+    padding: 64px 0;
+  }
+  &__head {
+    font-size: 0;
+    margin-bottom: 56px;
+  }
+  &__title {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: ff(title);
+    @include font-size(40);
+    font-weight: fw(700);
+    color: color(primary, 1);
+    margin-right: 164px;
+    margin-bottom: 0;
+  }
+  &__desc {
+    width: 456px;
+    display: inline-block;
+    vertical-align: middle;
+    @include font-size(18);
+    font-weight: fw(500);
+    color: color(grey, 2);
+    margin-bottom: 0;
+  }
+  &__body {
+    margin-left: -16px;
+    margin-right: -16px;
+    @include clearfix;
+  }
+  #{$os} {
+    &__item {
+      float: left;
+      width: 33.3333%;
+      padding: 0 16px;
+    }
+  }
+  .owl-carousel {
+    margin: 0;
+    .owl-item {
+      #{$os} {
+        &__item {
+          float: none;
+          width: 100%;
+        }
+      }
+    }
+    @include owl-nav;
+    .owl-nav {
+      position: absolute;
+      top: -104px;
+      right: 0;
+      z-index: zi(owl-nav);
+    }
+    @include owl-dot('true');
+    .owl-dots {
+      position: absolute;
+      left: 50%;
+      bottom: -56px;
+      transform: translateX(-50%);
+      z-index: zi(owl-dots);
+      font-size: 0;
+    }
+  }
+}

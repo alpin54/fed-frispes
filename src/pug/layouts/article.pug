@@ -1,0 +1,20 @@
+//-------------------------------------------------------------------------------
+  @name: Article
+  -------------------------------------------------------------------------------//
+
+// article
+.article
+  .container
+    .article__head
+      h2.txt-el__title
+        | !{data.title}
+      a.btn.btn--text(href=data.btn.to)
+        | !{data.btn.text}
+        i.fi-chevron-right
+    .article__body.js-article
+      each val in data.list
+        - data = val;
+        include ../components/article-item.pug
+
+='\n'
+// end-article

@@ -1,0 +1,20 @@
+//-------------------------------------------------------------------------------
+  @name: Gallery
+  -------------------------------------------------------------------------------//
+
+// gallery
+.gallery
+  .container
+    .gallery__wrapper
+      .gallery__head
+        p.txt-el__tagline
+          | !{data.tagline}
+        h2.txt-el__title
+          | !{data.title}
+      .gallery__body.js-gallery
+        each val in data.list
+          - data = val;
+          include ../components/gallery-item.pug
+
+='\n'
+// end-gallery

@@ -2,29 +2,73 @@
    Mixin Owl dot
    ========================================================================== */
 
-@mixin owl-dot {
-  .owl-dot {
-    position: relative;
-    display: inline-block;
-    width: 16px;
-    height: 4px;
-    margin-right: 8px;
-    background-color: rgba(color(white), 0.5);
-    transition: all 0.35s ease;
-    &:last-child {
-      margin-right: 0;
+@mixin owl-dot($interval: 'false', $counter: 'false') {
+  @if $interval == 'false' {
+    .owl-dot {
+      position: relative;
+      display: inline-block;
+      width: 16px;
+      height: 4px;
+      margin-right: 8px;
+      background-color: color(grey, 4);
+      transition: all 0.35s ease;
+      &:last-child {
+        margin-right: 0;
+      }
+      &.active {
+        background-color: color(secondary, 1);
+        width: 40px;
+      }
     }
-    &.active {
-      background-color: color(secondary, 1);
-      width: 40px;
-    }
-    &s {
-      position: absolute;
-      left: 50%;
-      bottom: 56px;
-      transform: translateX(-50%);
-      z-index: zi(owl-dots);
-      font-size: 0;
+  } @else {
+    @if $counter == 'false' {
+      .owl-dot {
+        position: relative;
+        display: inline-block;
+        width: 16px;
+        height: 4px;
+        background-color: color(grey, 4);
+        transition: all 0.35s ease;
+        &:last-child {
+          margin-right: 0;
+        }
+        &.active {
+          background-color: color(secondary, 1);
+          width: 40px;
+        }
+      }
+    } @else {
+      .owl-dot {
+        counter-increment: slides-num;
+        position: relative;
+        display: inline-block;
+        width: 16px;
+        height: 4px;
+        background-color: color(grey, 4);
+        transition: all 0.35s ease;
+        &:last-child {
+          margin-right: 0;
+        }
+        &.active {
+          background-color: color(secondary, 1);
+          width: 40px;
+          &::before {
+            font-family: ff(primary);
+            content: '0' counter(slides-num) ' / ';
+            @include font-size(16);
+            font-weight: fw(400);
+          }
+        }
+        &s {
+          &::after {
+            font-family: ff(primary);
+            content: '0' counter(slides-num);
+            @include font-size(16);
+            font-weight: fw(400);
+            color: color(grey, 1);
+          }
+        }
+      }
     }
   }
 }

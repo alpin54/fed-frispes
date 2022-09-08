@@ -8,7 +8,12 @@ import {
   Header,
   Footer,
   FormElement,
-  MainBanner
+  MainBanner,
+  OurSpaces,
+  OurFacilities,
+  Gallery,
+  Reviews,
+  HelpCenter
 } from 'components';
 
 // --- App
@@ -43,6 +48,11 @@ const App = (() => {
       Footer.init();
       FormElement.init();
       MainBanner.init();
+      OurSpaces.init();
+      OurFacilities.init();
+      Gallery.init();
+      Reviews.init();
+      HelpCenter.init();
     })(jQuery);
   };
 

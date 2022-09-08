@@ -1,0 +1,29 @@
+//-------------------------------------------------------------------------------
+  @name: Article Item
+  -------------------------------------------------------------------------------//
+
+// article-item
+.article__item(class=(data.class == 'primary' ? 'article__item--primary' : ''))
+  .article__box
+    ='\n'
+    a.article__link(href=data.to)
+    .article__img
+      ='\n'
+      img.article__img__el(src='assets/img/dummy/'+data.img alt=data.title)/
+    .article__txt
+      h3.article__title
+        | !{data.title}
+      p.article__desc
+        | !{data.desc}
+      if data.avatar
+        .article__avatar
+          .article__avatar__img
+            ='\n'
+            img.article__avatar__img__el(src='assets/img/dummy/'+data.avatar.img alt=data.avatar.autor)/
+          .article__avatar__txt
+            h3.article__author
+              | !{data.avatar.author}
+            p.article__position
+              | !{data.avatar.position}
+='\n'
+// end-article-item

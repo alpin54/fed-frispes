@@ -8,13 +8,12 @@ Layout: Header
   left: 0;
   z-index: zi(header);
   width: 100%;
-  background-color: transparent;
+  background-color: color(white);
   transition: all 0.5s ease;
   @include medium {
     text-align: center;
   }
   .header-on-scroll & {
-    background-color: color(white);
     @include shadow(1);
   }
   .scroll-down & {
@@ -32,6 +31,7 @@ Layout: Header
         top: 72px;
         left: 0;
         bottom: 0;
+        z-index: zi(header-inner);
         width: 100%;
         height: 100%;
         opacity: 0;
@@ -56,7 +56,7 @@ Layout: Header
     position: absolute;
     left: 0;
     top: 50%;
-    z-index: 1;
+    z-index: zi(Header);
     transform: translateY(-50%);
     font-size: 0;
     line-height: 1;
@@ -84,7 +84,7 @@ Layout: Header
       top: 72px;
       right: 0;
       bottom: 0;
-      z-index: 2;
+      z-index: zi(header-menu);
       width: 420px;
       text-align: left;
       background-color: color(primary, 1);
@@ -116,7 +116,7 @@ Layout: Header
       @include medium {
         padding-right: 0;
         transition: all 0.45s ease;
-        transition-delay: 0s;
+        transition-delay: 0.2s;
         opacity: 0;
         transform: translateX(24px);
         .show-nav & {
@@ -145,10 +145,9 @@ Layout: Header
       text-decoration: none;
       transition: all 0.35s ease;
       @include large {
-        padding: 48px 16px;
+        padding: 12px 0;
       }
       @include medium {
-        padding: 12px 0;
         @include font-size(20);
         color: color(white);
       }
@@ -162,7 +161,10 @@ Layout: Header
       .header-on-scroll & {
         padding: 32px 20px;
         @include large {
-          padding: 32px 16px;
+          padding: 12px 0;
+        }
+        @include small {
+          padding: 8px 0;
         }
       }
     }
@@ -170,7 +172,7 @@ Layout: Header
       position: absolute;
       right: 0;
       top: 50%;
-      z-index: 1;
+      z-index: zi(header-btn);
       transform: translateY(-50%);
       font-size: 0;
       @include medium {
@@ -181,7 +183,7 @@ Layout: Header
         padding: 32px;
         background-color: color(primary, 1);
         transform: none;
-        transition: all 0.45s ease;
+        transition: all 0.45s ease 0s;
         transition-delay: 0s;
         opacity: 0;
         transform: translateY(24px);

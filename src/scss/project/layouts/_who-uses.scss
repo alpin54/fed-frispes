@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Components Who Uses
+   ========================================================================== */
+
+.who-uses {
+  $ws: &;
+  overflow: hidden;
+  padding: 56px 0;
+  @include large {
+    padding: 48px 0;
+  }
+  @include medium {
+    padding: 40px 0;
+  }
+  @include small {
+    padding: 32px 0;
+  }
+  &__head {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 64px;
+  }
+  &__title {
+    font-family: ff(title);
+    @include font-size(40);
+    font-weight: fw(700);
+    margin-bottom: 24px;
+  }
+  &__desc {
+    @include font-size(18);
+    font-weight: fw(500);
+    color: color(grey, 2);
+    margin-bottom: 0;
+  }
+  &__body {
+    margin-left: -28px;
+    margin-right: -28px;
+    @include clearfix;
+  }
+  #{$ws} {
+    &__item {
+      float: left;
+      width: 16.66666%;
+      padding: 0 28px;
+    }
+  }
+}

@@ -25,7 +25,7 @@
       position: absolute;
       right: 16px;
       top: 50%;
-      z-index: 1;
+      z-index: zi(fe-dropdown);
       transform: translateY(-50%);
       @include font-size(32);
       color: color(white);
@@ -35,7 +35,7 @@
       position: absolute;
       left: 0;
       top: 0;
-      z-index: 2;
+      z-index: zi(fe-dropdown-dropbtn);
       opacity: 0;
       width: 100%;
       height: 100%;
@@ -64,7 +64,7 @@
       top: 104px;
       left: 0;
       right: 0;
-      z-index: 4;
+      z-index: zi(fe-dropdown-menu);
       list-style: none;
       margin: 0;
       padding: 8px 0;

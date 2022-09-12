@@ -3,43 +3,85 @@
    ========================================================================== */
 
 .why-frisfes {
-  padding: 56px 0;
-  @include large {
-    padding: 48px 0;
-  }
-  @include medium {
-    padding: 40px 0;
-  }
-  @include small {
-    padding: 32px 0;
-  }
+  // padding: 56px 0;
+  // @include large {
+  //   padding: 48px 0;
+  // }
+  // @include medium {
+  //   padding: 40px 0;
+  // }
+  // @include small {
+  //   padding: 32px 0;
+  // }
   &__wrapper {
-    font-size: 0;
+    @include clearfix;
   }
   &__txt {
-    display: inline-block;
-    vertical-align: middle;
+    float: right;
+    display: table;
     width: 50%;
+    min-height: 464px;
     padding: 56px;
     background-color: color(primary, 1);
+    @include medium {
+      float: none;
+      width: 100%;
+      padding: 48px;
+      min-height: initial;
+      margin-bottom: 24px;
+    }
+    @include small {
+      padding: 40px;
+    }
+    @include x-small {
+      padding: 32px;
+    }
+    &__wrapper {
+      display: table-cell;
+      vertical-align: middle;
+    }
   }
   &__list {
-    display: inline-block;
-    vertical-align: middle;
+    float: left;
+    display: table;
     width: 50%;
+    min-height: 464px;
     padding: 24px;
     @include clearfix;
+    @include medium {
+      float: none;
+      width: 100%;
+      min-height: initial;
+      padding: 0;
+    }
+    &__wrapper {
+      display: table-cell;
+      vertical-align: middle;
+    }
   }
   &__item {
     float: left;
     width: 50%;
     @include clearfix;
     padding: 32px 0;
+    @include medium {
+      padding: 24px 0;
+    }
+    // @include x-small {
+    //   float: none;
+    //   width: 100%;
+    //   padding: 0;
+    //   margin-bottom: 24px;
+    // }
     &__icon {
       position: relative;
       float: left;
       width: 32px;
       height: 32px;
+      @include x-small {
+        width: 24px;
+        height: 24px;
+      }
       &__el {
         position: absolute;
         top: 50%;
@@ -53,20 +95,34 @@
       }
     }
     &__txt {
-      padding-left: 24px;
       float: left;
+      width: 80%;
+      padding-left: 24px;
+      @include x-small {
+        padding-left: 16px;
+      }
     }
     &__title {
       @include font-size(32);
       font-weight: fw(400);
       color: color(primary, 1);
       margin-bottom: 8px;
+      @include medium {
+        @include font-size(24);
+        margin-bottom: 4px;
+      }
+      @include x-small {
+        @include font-size(16);
+      }
     }
     &__desc {
       @include font-size(16);
       font-weight: fw(400);
       color: color(grey, 2);
       margin-bottom: 0;
+      @include x-small {
+        @include font-size(14);
+      }
     }
   }
 }

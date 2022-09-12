@@ -4,6 +4,7 @@
 
 .our-facilities {
   $of: &;
+  position: relative;
   padding: 56px 0;
   @include large {
     padding: 48px 0;
@@ -129,11 +130,16 @@
     @include owl-dot('true');
     .owl-dots {
       position: absolute;
-      left: -24px;
-      top: 0;
+      left: -48px;
+      top: 40px;
       transform: rotate(90deg);
       z-index: zi(owl-dots);
       font-size: 0;
     }
+  }
+  @include slider-counter;
+  .slider-counter {
+    left: calc(50% - 572px);
+    transform: rotate(272deg);
   }
 }

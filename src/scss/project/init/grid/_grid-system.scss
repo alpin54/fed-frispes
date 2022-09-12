@@ -25,6 +25,9 @@
 .main-site {
   padding-top: 136px;
   transition: all 0.3s ease;
+  @include large {
+    padding-top: 88px;
+  }
   @include medium {
     padding-top: 72px;
   }

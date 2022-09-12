@@ -7,11 +7,33 @@
   &__box {
     position: relative;
     overflow: hidden;
+    white-space: normal;
     &:hover {
       #{$os} {
         &__board {
           transform: none;
           transition-delay: 0.2s;
+          &::before {
+            opacity: 1;
+            transform: none;
+            transition-delay: 0.65s;
+          }
+          &__title,
+          &__desc {
+            opacity: 1;
+            transform: none;
+          }
+          &__title {
+            transition-delay: 0.65s;
+          }
+          &__desc {
+            transition-delay: 0.8s;
+          }
+          &__btn {
+            opacity: 1;
+            transform: none;
+            transition-delay: 0.85s;
+          }
         }
       }
     }
@@ -26,47 +48,69 @@
     height: 100%;
     background-color: color(primary, 1);
     transform: translateX(-100%);
-    transition: transform 0.8s ease 0.1s;
+    transition: transform 0.5s ease 0.75s;
     &::before {
       content: '';
       position: absolute;
       top: 16px;
       right: 16px;
+      z-index: zi(our-spaces-board-before);
       width: 96px;
       height: 96px;
       background-image: url('../img/bg/our-spaces-bg.svg');
       background-repeat: no-repeat;
+      transform: translateX(-16px);
+      opacity: 0;
+      transition: all 0.4s ease 0.1s;
     }
-    // &::after {
-    //   position: absolute;
-    //   bottom: 80px;
-    //   right: -72px;
-    //   z-index: 1;
-    //   outline: 0;
-    //   border: 0;
-    //   padding: 24px 20px;
-    //   @include font-size(32);
-    //   color: color(white);
-    //   background-color: color(secondary, 1);
-    // }
-    // @include font-icon('\e90a', 'after');
+    &::after {
+      position: absolute;
+      bottom: 80px;
+      right: -72px;
+      z-index: zi(our-spaces-board-after);
+      outline: 0;
+      border: 0;
+      padding: 24px 20px;
+      @include font-size(32);
+      color: color(white);
+      background-color: color(secondary, 1);
+      @include x-small {
+        bottom: 76px;
+      }
+    }
+    @include font-icon('\e90a', 'after');
     &__txt {
       display: table-cell;
       vertical-align: middle;
       text-align: center;
       padding: 56px 48px;
+      @include large {
+        padding: 40px 32px;
+      }
     }
     &__title {
       font-family: ff(title);
       @include font-size(32);
       font-weight: fw(700);
       color: color(white);
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 0.4s ease 0.4s;
+      @include large {
+        @include font-size(24);
+      }
     }
     &__desc {
       @include font-size(18);
       font-weight: fw(500);
       color: color(white);
       margin-bottom: 0;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: all 0.4s ease 0.3s;
+      @include large {
+        @include font-size(16);
+      }
     }
     &__btn {
       text-decoration: none;
@@ -82,7 +126,9 @@
       font-weight: fw(500);
       color: color(white);
       background-color: color(secondary, 1);
-      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateX(-16px);
+      transition: all 0.45s ease 0.45s;
       &:hover {
         background-color: color(secondary, 2);
         i {
@@ -101,6 +147,9 @@
   &__img {
     position: relative;
     padding-bottom: 120%;
+    @include large {
+      padding-bottom: 112%;
+    }
     &__el {
       display: block;
       position: absolute;
@@ -118,6 +167,9 @@
       @include font-size(20);
       font-weight: fw(700);
       margin-bottom: 0;
+      @include small {
+        @include font-size(18);
+      }
     }
   }
   &__btn {

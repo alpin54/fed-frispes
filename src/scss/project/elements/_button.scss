@@ -18,6 +18,9 @@
   transition: all 0.3s ease;
   cursor: pointer;
   @include remove-tap-highlight;
+  @include x-small {
+    padding: 14px 16px;
+  }
   &--block {
     display: block;
     min-width: none;

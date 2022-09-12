@@ -4,6 +4,7 @@
 
 .our-spaces {
   $os: &;
+  position: relative;
   padding: 112px 0;
   @include large {
     padding: 96px 0;
@@ -17,6 +18,12 @@
   &__head {
     font-size: 0;
     margin-bottom: 56px;
+    @include medium {
+      margin-bottom: 40px;
+    }
+    @include small {
+      margin-bottom: 32px;
+    }
   }
   &__title {
     display: inline-block;
@@ -27,26 +34,69 @@
     color: color(primary, 1);
     margin-right: 164px;
     margin-bottom: 0;
+    @include large {
+      display: block;
+      margin-right: 0;
+      margin-bottom: 24px;
+    }
+    @include medium {
+      @include font-size(32);
+    }
+    @include x-small {
+      @include font-size(24);
+      margin-bottom: 16px;
+    }
   }
   &__desc {
-    width: 456px;
+    max-width: 456px;
     display: inline-block;
     vertical-align: middle;
     @include font-size(18);
     font-weight: fw(500);
     color: color(grey, 2);
     margin-bottom: 0;
+    @include large {
+      display: block;
+      max-width: 500px;
+    }
+    @include x-small {
+      @include font-size(16);
+    }
   }
   &__body {
     margin-left: -16px;
     margin-right: -16px;
     @include clearfix;
+    @include small {
+      margin-left: -24px;
+      margin-right: -24px;
+      padding-left: 24px;
+      @include scroll('x', 'touch', 'hide');
+    }
+    @include x-small {
+      margin-left: -16px;
+      margin-right: -16px;
+      padding-left: 16px;
+    }
   }
   #{$os} {
     &__item {
       float: left;
       width: 33.3333%;
       padding: 0 16px;
+      @include small {
+        float: none;
+        display: inline-block;
+        width: 320px;
+        padding: 0;
+        margin-right: 24px;
+        &:last-child {
+          margin-right: 16px;
+        }
+      }
+      @include x-small {
+        width: 280px;
+      }
     }
   }
   .owl-carousel {
@@ -56,6 +106,7 @@
         &__item {
           float: none;
           width: 100%;
+          padding: 0;
         }
       }
     }
@@ -74,6 +125,21 @@
       transform: translateX(-50%);
       z-index: zi(owl-dots);
       font-size: 0;
+      @include large {
+        bottom: -40px;
+      }
+    }
+  }
+  @include slider-counter;
+  .slider-counter {
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include medium {
+      bottom: 0;
+    }
+    @include small {
+      display: none;
     }
   }
 }

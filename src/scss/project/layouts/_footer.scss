@@ -29,6 +29,15 @@
     float: left;
     max-width: 256px;
     margin-right: 128px;
+    @include large {
+      max-width: 248px;
+      margin-right: 48px;
+    }
+    @include medium {
+      float: none;
+      max-width: initial;
+      margin-right: 0;
+    }
   }
   &__logo {
     display: block;
@@ -37,6 +46,15 @@
     &__el {
       display: block;
       height: 56px;
+      @include large {
+        height: 48px;
+      }
+      @include medium {
+        height: 40px;
+      }
+      @include small {
+        height: 32px;
+      }
     }
   }
   &__desc {
@@ -98,11 +116,47 @@
   &__menu {
     float: right;
     @include clearfix;
+    @include medium {
+      float: none;
+      margin-bottom: 24px;
+    }
     &__item {
       float: left;
       margin-right: 64px;
+      @include large {
+        margin-right: 48px;
+      }
+      @include small {
+        float: none;
+        width: 100%;
+        display: block;
+        margin-right: 0;
+      }
       &:last-child {
         margin-right: 0;
+      }
+      &--show {
+        @include small {
+          #{$f} {
+            &__title {
+              &::before {
+                top: 8px;
+                transform-origin: 100% 0%;
+                transform: rotate(-40deg) scaleY(1.1);
+              }
+              &::after {
+                top: 8px;
+                transform-origin: 0% 0%;
+                transform: rotate(40deg) scaleY(1.1);
+              }
+            }
+            &__nav__item {
+              opacity: 1;
+              transform: none;
+              transition-delay: 0.3s;
+            }
+          }
+        }
       }
     }
   }
@@ -112,7 +166,7 @@
     color: rgba(color(white), 0.5);
     margin-bottom: 24px;
     position: relative;
-    @include x-small {
+    @include small {
       &::before,
       &::after {
         content: '';
@@ -145,17 +199,18 @@
     margin: 0;
     padding: 0;
     max-width: 200px;
-    @include x-small {
+    @include small {
       display: none;
-      padding-bottom: 24px;
+      padding-bottom: 16px;
     }
     &__item {
       position: relative;
       margin-bottom: 8px;
-      @include x-small {
+      @include small {
         opacity: 0;
         transform: translateX(24px);
         transition: all 0.4s ease 0s;
+        margin-bottom: 16px;
       }
       &:last-child {
         margin-bottom: 0;

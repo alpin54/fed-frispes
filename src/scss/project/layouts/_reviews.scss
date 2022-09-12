@@ -47,7 +47,7 @@
     .owl-nav {
       position: absolute;
       top: -96px;
-      right: 120px;
+      right: calc(50% - 480px);
       z-index: zi(owl-nav);
     }
     @include owl-dot('true');

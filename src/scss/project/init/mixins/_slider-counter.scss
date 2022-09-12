@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Mixin Slider Counter
+   ========================================================================== */
+// slider-counter
+@mixin slider-counter {
+  .slider-counter {
+    position: absolute;
+    z-index: zi(slider-counter);
+    font-size: 0;
+    &__current {
+      display: inline-block;
+      vertical-align: middle;
+      @include font-size(18);
+      font-weight: fw(500);
+      margin-bottom: 0;
+    }
+    &__length {
+      display: inline-block;
+      vertical-align: middle;
+      @include font-size(16);
+      font-weight: fw(400);
+      color: color(grey, 1);
+      margin-bottom: 0;
+    }
+  }
+}

@@ -76,7 +76,25 @@ const OurFacilities = (() => {
   // setHeightPane
   const setHeightPane = () => {
     const _controlHeight = $('.our-facilities__control').height();
+    const _position =
+      $('.our-facilities__control').height() -
+      $('.js-our-facilities').find('.owl-dots').width();
     $('.our-facilities__pane').css('height', _controlHeight);
+    $('.our-facilities .slider-counter').css('bottom', _position);
+  };
+
+  // handleCounter
+  const handleCounter = (event) => {
+    if (!event.namespace) {
+      return;
+    }
+    const _slides = event.relatedTarget;
+    $('.our-facilities .slider-counter').html(
+      `<p class="slider-counter__current">${
+        _slides.relative(_slides.current()) + 1
+      } / </p>
+      <p class="slider-counter__length">${_slides.items().length}</p>`
+    );
   };
 
   // handleRunCarousel
@@ -101,11 +119,14 @@ const OurFacilities = (() => {
         loop: false,
         touchDrag: true,
         mouseDrag: false,
-        animateOut: 'fadeOut'
+        animateOut: 'fadeOut',
+        onInitialized: handleCounter,
+        onChanged: handleCounter
       });
     } else {
       if (_selector.hasClass('owl-carousel')) {
         _selector.removeClass('owl-carousel');
+        $('.our-facilities .slider-counter').remove();
       }
     }
   };

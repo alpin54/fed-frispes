@@ -5,16 +5,53 @@
 .main-banner {
   $mb: &;
   position: relative;
+  overflow: hidden;
+  padding-top: 56px;
+  @include large {
+    padding-top: 48px;
+  }
+  @include medium {
+    padding-top: 40px;
+  }
+  @include small {
+    padding-top: 32px;
+  }
   &__txt {
     position: relative;
     font-size: 0;
+    @include large {
+      margin-bottom: 32px;
+    }
+    @include medium {
+      margin-bottom: 0;
+    }
+    @include x-small {
+      margin-bottom: 24px;
+    }
     &-wrapper {
       display: inline-block;
       vertical-align: middle;
       width: 60%;
+      @include medium {
+        width: 100%;
+        margin-bottom: 24px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      @include small {
+        margin-bottom: 16px;
+      }
       &:last-child {
         width: 40%;
         padding-left: 60px;
+        @include large {
+          padding-left: 16px;
+        }
+        @include medium {
+          width: 100%;
+          padding-left: 0;
+        }
       }
     }
   }
@@ -23,6 +60,12 @@
     @include font-size(20);
     font-weight: fw(500);
     margin-bottom: 8px;
+    @include large {
+      @include font-size(18);
+    }
+    @include small {
+      @include font-size(16);
+    }
     &::after {
       content: '';
       display: inline-block;
@@ -42,39 +85,105 @@
     span {
       color: color(secondary, 2);
     }
+    @include large {
+      @include font-size(40);
+    }
+    @include small {
+      @include font-size(32);
+    }
   }
   &__desc {
     @include font-size(20);
     font-weight: fw(500);
     color: color(grey, 1);
     margin-bottom: 0;
+    @include medium {
+      @include font-size(18);
+    }
+    @include small {
+      @include font-size(16);
+    }
   }
   &__space {
     position: relative;
     padding: 64px 0;
+    min-height: 640px;
+    @include large {
+      min-height: 600px;
+      padding: 48px 0;
+    }
+    @include medium {
+      min-height: 520px;
+      padding: 0;
+      margin-top: 144px;
+    }
+    @include small {
+      min-height: 480px;
+    }
+    @include x-small {
+      min-height: initial;
+      margin-top: 0;
+    }
   }
   &__box {
+    display: inline-block;
     position: relative;
     z-index: 2;
     width: 448px;
     padding: 40px;
     background-color: color(primary, 1);
+    @include medium {
+      position: absolute;
+      top: -112px;
+      left: 0;
+      width: 432px;
+      padding: 32px;
+    }
+    @include small {
+      padding: 32px;
+    }
+    @include x-small {
+      padding: 24px;
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+      width: 100%;
+    }
     &__title {
       font-family: ff(title);
       @include font-size(32);
       font-weight: fw(700);
       color: color(white);
       margin-bottom: 24px;
+      @include medium {
+        @include font-size(24);
+      }
+      @include x-small {
+        margin-bottom: 16px;
+      }
     }
   }
   &__list {
     position: absolute;
     left: 312px;
     top: 0;
-    width: 960px;
+    width: calc(100% - 156px);
     height: 100%;
     z-index: zi(main-banner-list);
     @include shadow(0);
+    @include large {
+      left: 156px;
+      width: calc(100% - 80px);
+    }
+    @include medium {
+      left: 0;
+      width: 100%;
+    }
+    @include x-small {
+      position: relative;
+      height: 320px;
+    }
   }
   &__item {
     position: relative;
@@ -121,6 +230,12 @@
       transform: translateX(-50%);
       z-index: zi(owl-dots);
       font-size: 0;
+      @include medium {
+        bottom: 40px;
+      }
+      @include small {
+        bottom: 24px;
+      }
     }
   }
 }

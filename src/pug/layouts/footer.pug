@@ -115,7 +115,7 @@
     .footer__wrapper
       .footer__menu
         each val in dataFooter.menu
-          .footer__menu__item
+          .footer__menu__item.js-footer-acc
             h3.footer__title
               | !{val.title}
             ul.footer__nav(class=(val.class == 'contact' ? 'footer__nav--contact' : ''))

@@ -4,7 +4,6 @@
 
 @mixin owl-nav {
   .owl-nav {
-    width: 256px;
     text-align: left;
     .owl-prev,
     .owl-next {
@@ -12,11 +11,18 @@
       @include font-size(52);
       color: color(secondary, 1);
       transition: all 0.3s ease;
+      @include medium {
+        width: 96px;
+        @include font-size(40);
+      }
       &.disabled {
         width: 88px;
         color: color(grey, 2);
+        @include medium {
+          width: 72px;
+        }
         i::after {
-          width: 56px;
+          width: 48px;
           background-color: color(grey, 2);
         }
       }
@@ -32,6 +38,10 @@
           background-color: color(secondary, 1);
           border-radius: 32px;
           transition: all 0.3s ease;
+          @include medium {
+            width: 64px;
+            height: 3px;
+          }
         }
       }
     }
@@ -40,6 +50,9 @@
       i {
         &::after {
           left: 20px;
+          @include medium {
+            left: 16px;
+          }
         }
       }
     }
@@ -48,6 +61,9 @@
       i {
         &::after {
           right: 20px;
+          @include medium {
+            right: 16px;
+          }
         }
       }
     }

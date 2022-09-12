@@ -15,6 +15,11 @@
         p.main-banner__desc
           | !{data.desc}
     .main-banner__space
+      .main-banner__list.js-main-banner
+        each valImg in data.list
+          .main-banner__item
+            ='\n'
+            img.main-banner__img(src='assets/img/dummy/'+valImg.src alt=valImg.alt)/
       .main-banner__box
         h4.main-banner__box__title
           | !{data.box.title}
@@ -40,10 +45,5 @@
             ='\n'
             button.btn.btn--secondary.btn--block(type='button')
               | FIND MY SPACE
-      .main-banner__list.js-main-banner
-        each valImg in data.list
-          .main-banner__item
-            ='\n'
-            img.main-banner__img(src='assets/img/dummy/'+valImg.src alt=valImg.alt)/
 ='\n'
 // end-main-banner

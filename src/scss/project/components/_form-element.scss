@@ -52,12 +52,19 @@
       font-weight: fw(500);
       color: rgba(color(white), 0.35);
       margin-bottom: 8px;
+      @include x-small {
+        @include font-size(14);
+        margin-bottom: 4px;
+      }
     }
     &__text {
       @include font-size(16);
       font-weight: fw(500);
       color: color(white);
       margin-bottom: 0;
+      @include x-small {
+        @include font-size(14);
+      }
     }
     &__menu {
       position: absolute;
@@ -77,6 +84,9 @@
       @include shadow(0);
       @include scroll('y', 'touch', 'hide');
       transition: all 0.25s ease 0.1s;
+      @include x-small {
+        top: 88px;
+      }
     }
     &__item {
       max-width: 100%;
@@ -85,6 +95,9 @@
       cursor: pointer;
       margin-bottom: 4px;
       transition: background-color 0.3s ease;
+      @include x-small {
+        @include font-size(14);
+      }
       &:hover {
         background-color: color(grey, 4);
       }

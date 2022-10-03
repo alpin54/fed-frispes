@@ -7,41 +7,74 @@
   overflow: hidden;
   padding: 56px 0;
   @include large {
-    padding: 48px 0;
+    padding: 48px 0 24px;
   }
   @include medium {
-    padding: 40px 0;
+    padding: 40px 0 16px;
   }
   @include small {
-    padding: 32px 0;
+    padding: 32px 0 16px;
   }
   &__head {
     text-align: center;
     max-width: 600px;
     margin: 0 auto 64px;
+    @include large {
+      margin-bottom: 24px;
+    }
+    @include medium {
+      margin-bottom: 16px;
+    }
   }
   &__title {
     font-family: ff(title);
     @include font-size(40);
     font-weight: fw(700);
     margin-bottom: 24px;
+    @include medium {
+      @include font-size(32);
+      margin-bottom: 16px;
+    }
+    @include small {
+      @include font-size(24);
+    }
   }
   &__desc {
     @include font-size(18);
     font-weight: fw(500);
     color: color(grey, 2);
     margin-bottom: 0;
+    @include medium {
+      @include font-size(16);
+    }
   }
   &__body {
     margin-left: -28px;
     margin-right: -28px;
-    @include clearfix;
+    text-align: center;
+    font-size: 0;
+    @include large {
+      margin-left: -24px;
+      margin-right: -24px;
+    }
+    @include small {
+      margin-left: -16px;
+      margin-right: -16px;
+    }
   }
   #{$ws} {
     &__item {
-      float: left;
+      display: inline-block;
       width: 16.66666%;
       padding: 0 28px;
+      @include large {
+        width: 33.33333%;
+        padding: 24px;
+      }
+      @include small {
+        width: 50%;
+        padding: 16px;
+      }
     }
   }
 }

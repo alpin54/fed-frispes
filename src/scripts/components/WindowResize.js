@@ -4,7 +4,16 @@
 --------------------------------------------------------------------------------- */
 
 // --- components
-import { Header, Footer, Reviews, HelpCenter, OurSpaces } from 'components';
+import {
+  Header,
+  Footer,
+  Reviews,
+  HelpCenter,
+  OurSpaces,
+  OurFacilities,
+  MainBanner,
+  Gallery
+} from 'components';
 
 // --- WindowResize
 const WindowResize = (() => {
@@ -35,8 +44,13 @@ const WindowResize = (() => {
       Footer.footerSticky();
       Footer.destroyAccordion();
       Reviews.checkHeight();
+      Reviews.destroyCarousel();
       HelpCenter.checkHeight();
       OurSpaces.destroyCarousel();
+      OurFacilities.setHeight();
+      OurFacilities.destroyCarousel();
+      MainBanner.destroyCarousel();
+      Gallery.destroyCarousel();
       $('body').removeClass('hold-transition');
     }
   };

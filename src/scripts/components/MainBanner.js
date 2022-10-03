@@ -46,7 +46,8 @@ const MainBanner = (() => {
   };
 
   return {
-    init
+    init,
+    destroyCarousel: handleRunCarousel
   };
 })();
 

@@ -18,10 +18,25 @@
   }
   &__head {
     position: relative;
-    margin-bottom: 56px;
+    margin-bottom: 48px;
+    @include large {
+      margin-bottom: 40px;
+    }
+    @include medium {
+      margin-bottom: 32px;
+    }
+    @include small {
+      margin-bottom: 24px;
+    }
     .txt-el__title {
       max-width: 648px;
       margin-bottom: 0;
+      @include medium {
+        max-width: 480px;
+      }
+      @include x-small {
+        margin-bottom: 16px;
+      }
     }
     .btn {
       position: absolute;
@@ -29,20 +44,42 @@
       top: 50%;
       z-index: 1;
       transform: translateY(-50%);
+      @include x-small {
+        position: static;
+        transform: none;
+      }
     }
   }
   &__body {
     margin-left: -16px;
     margin-right: -16px;
     @include clearfix;
+    @include x-small {
+      margin-left: 0;
+      margin-right: 0;
+    }
   }
   #{$a} {
     &__item {
       float: left;
       width: 33.333333%;
       padding: 16px;
+      @include medium {
+        width: 50%;
+      }
+      @include x-small {
+        float: none;
+        width: 100%;
+        padding: 0 0 16px;
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
       &:first-child {
         width: 66%;
+        @include medium {
+          width: 100%;
+        }
       }
     }
   }

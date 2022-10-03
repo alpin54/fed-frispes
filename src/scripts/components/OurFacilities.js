@@ -34,20 +34,25 @@ const OurFacilities = (() => {
   const handleClickSelect = () => {
     $('.js-select-facilities').on('click', (e) => {
       const _this = $(e.currentTarget);
+      console.log(_this.parents('.our-facilities__tabs').length);
       if (
-        _this.parents('.js-tabs-facilites').hasClass('our-facilities--active')
+        _this
+          .parents('.our-facilities__tabs')
+          .hasClass('our-facilities__tabs--active')
       ) {
         _this
-          .parents('.js-tabs-facilites')
-          .removeClass('our-facilities--active');
+          .parents('.our-facilities__tabs')
+          .removeClass('our-facilities__tabs--active');
       } else {
-        _this.parents('.js-tabs-facilites').addClass('our-facilities--active');
+        _this
+          .parents('.our-facilities__tabs')
+          .addClass('our-facilities__tabs--active');
       }
     });
 
     $('body').on('click', (e) => {
-      if ($('.js-tabs-facilites').hasClass('our-facilities--active')) {
-        $('.js-tabs-facilites').removeClass('our-facilities--active');
+      if ($('.our-facilities__tabs').hasClass('our-facilities__tabs--active')) {
+        $('.our-facilities__tabs').removeClass('our-facilities__tabs--active');
       }
     });
 
@@ -60,27 +65,33 @@ const OurFacilities = (() => {
     $('body').on('keyup', (e) => {
       if (
         e.which == 27 &&
-        $('.js-tabs-facilites').hasClass('our-facilities--active')
+        $('.our-facilities__tabs').hasClass('our-facilities__tabs--active')
       ) {
-        $('.js-tabs-facilites').removeClass('our-facilities--active');
+        $('.our-facilities__tabs').removeClass('our-facilities__tabs--active');
       }
       if (
         e.which == 27 &&
-        $('.js-tabs-facilities').hasClass('our-facilities--active')
+        $('.our-facilities__tabs').hasClass('our-facilities__tabs--active')
       ) {
-        $('.js-tabs-facilities').removeClass('our-facilities--active');
+        $('.our-facilities__tabs').removeClass('our-facilities__tabs--active');
       }
     });
   };
 
-  // setHeightPane
-  const setHeightPane = () => {
-    const _controlHeight = $('.our-facilities__control').height();
+  // setHeightCounter
+  const setHeightCounter = () => {
     const _position =
-      $('.our-facilities__control').height() -
+      $('.our-facilities__pane').height() -
       $('.js-our-facilities').find('.owl-dots').width();
-    $('.our-facilities__pane').css('height', _controlHeight);
-    $('.our-facilities .slider-counter').css('bottom', _position);
+    $('.our-facilities .slider-counter').removeAttr('style');
+    if ($(window).width() >= 991.98) {
+      $('.our-facilities .slider-counter').css('bottom', _position);
+    } else {
+      $('.our-facilities .slider-counter').css('top', _position);
+    }
+    if ($(window).width() <= 767.86) {
+      $('.our-facilities .slider-counter').removeAttr('style');
+    }
   };
 
   // handleCounter
@@ -142,12 +153,14 @@ const OurFacilities = (() => {
       handleClickSelect();
       handleKeyupSelect();
       handleRunCarousel();
-      setHeightPane();
+      setHeightCounter();
     }
   };
 
   return {
-    init
+    init,
+    setHeight: setHeightCounter,
+    destroyCarousel: handleRunCarousel
   };
 })();
 

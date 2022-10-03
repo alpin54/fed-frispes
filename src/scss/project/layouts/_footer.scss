@@ -167,12 +167,13 @@
     margin-bottom: 24px;
     position: relative;
     @include small {
+      color: color(white);
       &::before,
       &::after {
         content: '';
         display: block;
         position: absolute;
-        top: 14px;
+        top: 16px;
         width: 12px;
         height: 2px;
         z-index: zi(footer-title);
@@ -191,6 +192,9 @@
         transform-origin: 0% 100%;
         transform: rotate(-40deg) scaleY(1.1);
       }
+    }
+    @include x-small {
+      @include font-size(18);
     }
   }
   &__nav {
@@ -224,6 +228,9 @@
       @include font-size(16);
       font-weight: fw(400);
       padding-bottom: 8px;
+      @include small {
+        color: rgba(color(white), 0.5);
+      }
       &::after {
         content: '';
         display: block;

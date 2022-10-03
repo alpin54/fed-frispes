@@ -5,9 +5,12 @@
 .reviews {
   $r: &;
   width: 100%;
-  min-height: 712px;
+  min-height: 704px;
   overflow: hidden;
   position: relative;
+  @include large {
+    min-height: initial;
+  }
   &__container {
     position: absolute;
     left: calc(50% - 560px);
@@ -16,20 +19,56 @@
     bottom: 0;
     z-index: 2;
     height: 100%;
+    @include large {
+      position: static;
+      margin-right: -32px;
+    }
+    @include small {
+      margin-right: -24px;
+    }
+    @include x-small {
+      margin-right: -16px;
+    }
   }
   &__content {
     position: relative;
     padding: 56px 0;
+    @include large {
+      padding: 48px 0;
+    }
+    @include medium {
+      padding: 40px 0;
+    }
+    @include small {
+      padding: 32px 0;
+    }
   }
   &__head {
     max-width: 400px;
     margin-bottom: 56px;
+    @include large {
+      margin-bottom: 40px;
+    }
+    @include medium {
+      margin-bottom: 32px;
+    }
+    @include small {
+      margin-bottom: 24px;
+    }
     .txt-el__title {
       margin-bottom: 0;
     }
   }
   &__body {
     font-size: 0;
+    padding-bottom: 32px;
+    @include small {
+      margin-left: -24px;
+      padding-left: 24px;
+      padding-bottom: 0;
+      font-size: 0;
+      @include scroll('x', 'touch', 'hide');
+    }
   }
   #{$r} {
     &__item {
@@ -37,6 +76,16 @@
       vertical-align: top;
       width: 448px;
       padding-right: 32px;
+      @include medium {
+        width: 420px;
+      }
+      @include small {
+        width: 320px;
+        padding-right: 24px;
+      }
+      @include x-small {
+        padding-right: 16px;
+      }
     }
   }
   .owl-carousel {
@@ -49,15 +98,22 @@
       top: -96px;
       right: calc(50% - 480px);
       z-index: zi(owl-nav);
+      @include large {
+        right: 32px;
+      }
     }
     @include owl-dot('true');
     .owl-dots {
       position: absolute;
       right: 50%;
-      bottom: -56px;
+      bottom: -32px;
       transform: translateX(-50%);
       z-index: zi(owl-dots);
       font-size: 0;
+      @include large {
+        right: auto;
+        left: calc(50% - 32px);
+      }
     }
   }
 }

@@ -26,6 +26,12 @@
     width: 100%;
     height: 48px;
     transition: transform 0.35s ease;
+    @include medium {
+      height: 40px;
+    }
+    @include x-small {
+      height: 32px;
+    }
     &__el {
       display: block;
       width: 100%;

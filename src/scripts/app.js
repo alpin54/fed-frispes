@@ -13,7 +13,9 @@ import {
   OurFacilities,
   Gallery,
   Reviews,
-  HelpCenter
+  HelpCenter,
+  Article,
+  ScrollAnimate
 } from 'components';
 
 // --- App
@@ -53,6 +55,8 @@ const App = (() => {
       Gallery.init();
       Reviews.init();
       HelpCenter.init();
+      Article.init();
+      ScrollAnimate.init();
     })(jQuery);
   };
 

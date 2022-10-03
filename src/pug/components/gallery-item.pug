@@ -6,7 +6,9 @@
 .gallery__item
   .gallery__img
     ='\n'
-    img.gallery__img__el(src='assets/img/dummy/'+data.img.src alt=data.img.alt)/
+    a.js-popup-image(href='assets/img/dummy/'+data.img.src)
+      ='\n'
+      img.gallery__img__el(src='assets/img/dummy/'+data.img.src alt=data.img.alt)/
   ='\n'
 ='\n'
 // end-gallery-item

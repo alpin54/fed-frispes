@@ -5,6 +5,9 @@
 .gallery {
   &__item {
     height: 352px;
+    @include medium {
+      height: 280px;
+    }
   }
   &__img {
     width: 100%;

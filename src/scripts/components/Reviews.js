@@ -36,34 +36,36 @@ const Reviews = (() => {
     if (_selector.hasClass('owl-carousel')) {
       _selector.owlCarousel('destroy').removeClass('owl-carousel');
     }
-
     // --- check if itemLength > itemRun
-    if (_itemLength > _itemRun) {
-      // --- init carousel
-      _selector.addClass('owl-carousel').owlCarousel({
-        items: 1,
-        rewind: false,
-        autoplay: false,
-        autoHeight: true,
-        autoWidth: true,
-        dots: true,
-        nav: true,
-        loop: false,
-        touchDrag: true,
-        mouseDrag: true,
-        dotsSpeed: 1000,
-        navSpeed: 1000,
-        dragEndSpeed: 800,
-        navText: [
-          "<i class='fi-chevron-left'></i>",
-          "<i class='fi-chevron-right'></i>"
-        ]
-      });
-    } else {
-      if (_selector.hasClass('owl-carousel')) {
-        _selector.removeClass('owl-carousel');
+    if ($(window).width() > 767.86) {
+      // --- check if itemLength > itemRun
+      if (_itemLength > _itemRun) {
+        // --- init carousel
+        _selector.addClass('owl-carousel').owlCarousel({
+          items: 1,
+          rewind: false,
+          autoplay: false,
+          autoHeight: true,
+          autoWidth: true,
+          dots: true,
+          nav: true,
+          loop: false,
+          touchDrag: true,
+          mouseDrag: true,
+          dotsSpeed: 1000,
+          navSpeed: 1000,
+          dragEndSpeed: 800,
+          navText: [
+            "<i class='fi-chevron-left'></i>",
+            "<i class='fi-chevron-right'></i>"
+          ]
+        });
+      } else {
+        if (_selector.hasClass('owl-carousel')) {
+          _selector.removeClass('owl-carousel');
+        }
+        _selector.addClass('reviews--single');
       }
-      _selector.addClass('reviews--single');
     }
   };
 
@@ -77,7 +79,8 @@ const Reviews = (() => {
 
   return {
     init,
-    checkHeight: handleCheckHeight
+    checkHeight: handleCheckHeight,
+    destroyCarousel: handleRunCarousel
   };
 })();
 

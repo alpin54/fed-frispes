@@ -62,6 +62,14 @@
       transform: translateX(-16px);
       opacity: 0;
       transition: all 0.4s ease 0.1s;
+      @include medium {
+        width: 88px;
+        height: 88px;
+      }
+      @include x-small {
+        width: 80px;
+        height: 80px;
+      }
     }
     &::after {
       position: absolute;
@@ -74,8 +82,13 @@
       @include font-size(32);
       color: color(white);
       background-color: color(secondary, 1);
-      @include x-small {
+      @include small {
+        right: -64px;
+        padding: 16px;
         bottom: 76px;
+      }
+      @include x-small {
+        bottom: 56px;
       }
     }
     @include font-icon('\e90a', 'after');
@@ -129,6 +142,11 @@
       opacity: 0;
       transform: translateX(-16px);
       transition: all 0.45s ease 0.45s;
+      @include small {
+        min-width: 200px;
+        padding: 8px 16px;
+        @include font-size(16);
+      }
       &:hover {
         background-color: color(secondary, 2);
         i {
@@ -163,12 +181,18 @@
   &__txt {
     padding: 24px;
     text-align: center;
+    @include x-small {
+      padding: 16px;
+    }
     &__title {
       @include font-size(20);
       font-weight: fw(700);
       margin-bottom: 0;
       @include small {
         @include font-size(18);
+      }
+      @include x-small {
+        @include font-size(16);
       }
     }
   }

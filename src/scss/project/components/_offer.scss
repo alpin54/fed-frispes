@@ -21,13 +21,22 @@
   &__img {
     position: absolute;
     right: 0;
-    bottom: -80px;
+    top: -48px;
     z-index: 1;
-    height: 504px;
+    height: 420px;
+    @include medium {
+      height: 380px;
+    }
+    @include small {
+      position: relative;
+      top: 0;
+      height: 320px;
+      margin-bottom: -56px;
+    }
     &::before {
       content: '';
       position: absolute;
-      bottom: -80px;
+      top: 0;
       right: 0;
       z-index: -1;
       width: 372px;
@@ -35,15 +44,25 @@
       background-image: url('../img/bg/pattern-bg.svg');
       background-repeat: no-repeat;
       background-size: cover;
+      @include small {
+        width: 100%;
+        height: 100%;
+      }
     }
     &__el {
       display: block;
       width: 100%;
       height: 100%;
+      @include small {
+        object-fit: contain;
+      }
     }
   }
   &__txt {
     max-width: 448px;
+    @include small {
+      margin-bottom: 24px;
+    }
     .txt-el {
       &__title {
         margin-bottom: 16px;
@@ -51,6 +70,9 @@
       &__desc {
         color: color(grey, 4);
         margin-bottom: 32px;
+        @include small {
+          margin-bottom: 24px;
+        }
       }
     }
   }

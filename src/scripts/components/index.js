@@ -14,6 +14,8 @@ import OurFacilities from './OurFacilities';
 import Gallery from './Gallery';
 import Reviews from './Reviews';
 import HelpCenter from './HelpCenter';
+import Article from './Article';
+import ScrollAnimate from './ScrollAnimate';
 
 export {
   WindowScroll,
@@ -26,5 +28,7 @@ export {
   OurFacilities,
   Gallery,
   Reviews,
-  HelpCenter
+  HelpCenter,
+  Article,
+  ScrollAnimate
 };

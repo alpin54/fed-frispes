@@ -6,9 +6,6 @@
 .offer
   .container
     .offer__wrapper
-      .offer__img
-        ='\n'
-        img.offer__img__el(src="assets/img/dummy/"+data.img.src alt=data.img.alt)/
       .offer__txt.txt-el--white
         p.txt-el__tagline
           | !{data.tagline}
@@ -18,6 +15,9 @@
           | !{data.desc}
         a.btn.btn--secondary(href=data.btn.to)
           | !{data.btn.text}
+      .offer__img
+        ='\n'
+        img.offer__img__el(src="assets/img/dummy/"+data.img.src alt=data.img.alt)/
 
 ='\n'
 // end-offer

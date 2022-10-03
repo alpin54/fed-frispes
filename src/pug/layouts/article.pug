@@ -11,7 +11,7 @@
       a.btn.btn--text(href=data.btn.to)
         | !{data.btn.text}
         i.fi-chevron-right
-    .article__body.js-article
+    .article__body.js-set-article
       each val in data.list
         - data = val;
         include ../components/article-item.pug

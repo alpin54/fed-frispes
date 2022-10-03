@@ -13,6 +13,9 @@
       @include font-size(18);
       font-weight: fw(500);
       margin-bottom: 0;
+      @include small {
+        color: color(white);
+      }
     }
     &__length {
       display: inline-block;
@@ -21,6 +24,9 @@
       font-weight: fw(400);
       color: color(grey, 1);
       margin-bottom: 0;
+      @include small {
+        color: color(white);
+      }
     }
   }
 }

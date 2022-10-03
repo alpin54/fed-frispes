@@ -20,6 +20,7 @@
   @include remove-tap-highlight;
   @include x-small {
     padding: 14px 16px;
+    @include font-size(14);
   }
   &--block {
     display: block;

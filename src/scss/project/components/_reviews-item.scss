@@ -8,6 +8,15 @@
     padding: 48px 40px 192px;
     white-space: normal;
     background-color: color(primary, 1);
+    @include large {
+      padding: 40px 32px 168px;
+    }
+    @include medium {
+      padding: 32px 24px 144px;
+    }
+    @include small {
+      padding: 24px 24px 120px;
+    }
   }
   &__desc {
     @include font-size(16);
@@ -22,6 +31,19 @@
     bottom: 48px;
     z-index: zi(reviews-avatar);
     font-size: 0;
+    @include large {
+      left: 32px;
+      right: 32px;
+      bottom: 40px;
+    }
+    @include medium {
+      left: 24px;
+      right: 24px;
+      bottom: 32px;
+    }
+    @include small {
+      bottom: 24px;
+    }
     &__img {
       display: inline-block;
       vertical-align: middle;
@@ -29,6 +51,14 @@
       height: 56px;
       border-radius: 50%;
       overflow: hidden;
+      @include small {
+        width: 48px;
+        height: 48px;
+      }
+      @include x-small {
+        width: 40px;
+        height: 40px;
+      }
       &__el {
         display: block;
         width: 100%;
@@ -48,11 +78,24 @@
     font-weight: fw(700);
     color: color(white);
     margin-bottom: 4px;
+    @include small {
+      @include font-size(16);
+      margin-bottom: 2px;
+    }
+    @include x-small {
+      @include font-size(14);
+    }
   }
   &__position {
     @include font-size(16);
     font-weight: fw(400);
     color: color(white);
     margin-bottom: 0;
+    @include small {
+      @include font-size(14);
+    }
+    @include x-small {
+      @include font-size(12);
+    }
   }
 }

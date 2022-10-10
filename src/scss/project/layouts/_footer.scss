@@ -118,7 +118,7 @@
     @include clearfix;
     @include medium {
       float: none;
-      margin-bottom: 24px;
+      margin-bottom: 16px;
     }
     &__item {
       float: left;
@@ -221,6 +221,7 @@
       }
     }
     &__link {
+      position: relative;
       text-decoration: none;
       transition: all 0.3s ease;
       display: inline-block;

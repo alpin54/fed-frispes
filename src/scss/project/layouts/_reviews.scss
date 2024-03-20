@@ -21,13 +21,7 @@
     height: 100%;
     @include large {
       position: static;
-      margin-right: -32px;
-    }
-    @include small {
-      margin-right: -24px;
-    }
-    @include x-small {
-      margin-right: -16px;
+      left: 0;
     }
   }
   &__content {
@@ -63,11 +57,17 @@
     font-size: 0;
     padding-bottom: 32px;
     @include small {
+      margin-right: -24px;
       margin-left: -24px;
       padding-left: 24px;
       padding-bottom: 0;
       font-size: 0;
       @include scroll('x', 'touch', 'hide');
+    }
+    @include x-small {
+      margin-left: -16px;
+      margin-right: -16px;
+      padding-left: 16px;
     }
   }
   #{$r} {
@@ -105,14 +105,13 @@
     @include owl-dot('true');
     .owl-dots {
       position: absolute;
-      right: 50%;
+      left: 560px;
       bottom: -32px;
       transform: translateX(-50%);
       z-index: zi(owl-dots);
       font-size: 0;
       @include large {
-        right: auto;
-        left: calc(50% - 32px);
+        left: 50%;
       }
     }
   }

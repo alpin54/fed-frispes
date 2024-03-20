@@ -10,9 +10,11 @@ const OurSpaces = (() => {
       return;
     }
     const _slides = event.relatedTarget;
-    const _itemCounter = `<p class="slider-counter__current">${
-      _slides.relative(_slides.current()) + 1
-    } / </p><p class="slider-counter__length">${_slides.items().length}</p>`;
+    const _itemCounter = `<p class="slider-counter__current">${_slides.relative(
+      _slides.current() + 1
+    )} / </p><p class="slider-counter__length">${
+      _slides.items().length - 2
+    }</p>`;
     $('.our-spaces .slider-counter').html(_itemCounter);
   };
 

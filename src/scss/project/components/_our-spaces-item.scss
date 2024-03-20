@@ -12,11 +12,10 @@
       #{$os} {
         &__board {
           transform: none;
-          transition-delay: 0.2s;
           &::before {
             opacity: 1;
             transform: none;
-            transition-delay: 0.65s;
+            transition-delay: 0.45s;
           }
           &__title,
           &__desc {
@@ -24,15 +23,15 @@
             transform: none;
           }
           &__title {
-            transition-delay: 0.65s;
+            transition-delay: 0.45s;
           }
           &__desc {
-            transition-delay: 0.8s;
+            transition-delay: 0.5s;
           }
           &__btn {
             opacity: 1;
             transform: none;
-            transition-delay: 0.85s;
+            transition-delay: 0.55s;
           }
         }
       }
@@ -48,7 +47,7 @@
     height: 100%;
     background-color: color(primary, 1);
     transform: translateX(-100%);
-    transition: transform 0.5s ease 0.75s;
+    transition: transform 0.4s ease 0s;
     &::before {
       content: '';
       position: absolute;
@@ -59,9 +58,9 @@
       height: 96px;
       background-image: url('../img/bg/our-spaces-bg.svg');
       background-repeat: no-repeat;
-      transform: translateX(-16px);
+      transform: translateY(-16px);
       opacity: 0;
-      transition: all 0.4s ease 0.1s;
+      transition: all 0.3s ease 0s;
       @include medium {
         width: 88px;
         height: 88px;
@@ -108,7 +107,7 @@
       color: color(white);
       opacity: 0;
       transform: translateY(16px);
-      transition: all 0.4s ease 0.4s;
+      transition: all 0.3s ease 0s;
       @include large {
         @include font-size(24);
       }
@@ -120,7 +119,7 @@
       margin-bottom: 0;
       opacity: 0;
       transform: translateY(16px);
-      transition: all 0.4s ease 0.3s;
+      transition: all 0.3s ease 0s;
       @include large {
         @include font-size(16);
       }
@@ -140,8 +139,8 @@
       color: color(white);
       background-color: color(secondary, 1);
       opacity: 0;
-      transform: translateX(-16px);
-      transition: all 0.45s ease 0.45s;
+      transform: translateY(16px);
+      transition: all 0.3s ease 0s;
       @include small {
         min-width: 200px;
         padding: 8px 16px;
